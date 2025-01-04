@@ -5,6 +5,8 @@ import { motion } from "framer-motion"
 import { ArrowDown, ExternalLink } from "lucide-react"
 import { FadeIn } from "../animations/FadeIn"
 import { Button } from "../ui/button"
+import StarBorder from "../animations/button/StarBorder"
+import { useTheme } from "next-themes"
 
 export function Hero() {
   const scrollToNextSection = () => {
@@ -13,6 +15,9 @@ export function Hero() {
       aboutSection.scrollIntoView({ behavior: 'smooth' })
     }
   }
+
+  const theme = useTheme()
+
 
   return (
     <section className="h-screen relative flex flex-col justify-center">
@@ -29,8 +34,14 @@ export function Hero() {
 
           <FadeIn delay={0.2}>
             <div className="flex flex-col sm:flex-row gap-4 items-center">
-              <Button asChild size="lg">
-                <a 
+              <StarBorder
+                as="a"
+                href="#about"
+                className="cursor-pointer"
+                color= {theme.theme === "black" ? "white" : "cyan"}
+                speed="10s"
+              >
+                 <a 
                   href="https://www.upwork.com/freelancers/~013014a3cea6f7ea84" // Replace with your Upwork profile URL
                   target="_blank" 
                   rel="noopener noreferrer"
@@ -39,10 +50,16 @@ export function Hero() {
                   Hire me on Upwork
                   <ExternalLink className="w-4 h-4" />
                 </a>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
+              </StarBorder>
+              <StarBorder
+               as="a"
+               href="#about"
+               className="cursor-pointer"
+               color="cyan"
+               speed="10s"
+              >
                 <a href="#projects">View My Work</a>
-              </Button>
+              </StarBorder>
             </div>
           </FadeIn>
         </div>
