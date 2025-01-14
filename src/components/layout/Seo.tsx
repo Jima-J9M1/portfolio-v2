@@ -15,29 +15,29 @@ export const seoMetadata: Metadata = {
     'JavaScript',
     // Add more relevant keywords
   ],
-  authors: [{ name: 'Your Name' }],
+  authors: [{ name: 'Jima Dube' }],
   creator: 'Your Name',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://your-domain.com',
-    title: 'Your Name - Portfolio',
+    url: 'https://jima-nuture.infinityspark.net/',
+    title: 'Jima Dube - Portfolio',
     description: 'Full-stack developer specializing in building exceptional digital experiences.',
-    siteName: 'Your Name Portfolio',
+    siteName: 'Jima Dube Portfolio',
     images: [
       {
         url: '/og-image.png', // Add your OG image
         width: 1200,
         height: 630,
-        alt: 'Your Name Portfolio'
+        alt: 'Jima Dube Portfolio'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Your Name - Portfolio',
+    title: 'Jima Dube - Portfolio',
     description: 'Full-stack developer specializing in building exceptional digital experiences.',
-    creator: '@yourtwitter',
+    creator: '@JimaDube',
     images: ['/og-image.png'] // Add your Twitter card image
   },
   robots: {
