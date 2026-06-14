@@ -1,21 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-    eslint: {
-          ignoreDuringBuilds: true,
-    },
-    typescript: {
-          ignoreBuildErrors: true,
-    },
-    images:{
-          remotePatterns:[
-            {
-                      hostname:"fonts",
-                      pathname:'fonts.gstatic.com'
-            }
-                ]
-    }
-    /* config options here */
+      eslint: { ignoreDuringBuilds: true },
+      typescript: { ignoreBuildErrors: true },
 };
 
 export default nextConfig;
