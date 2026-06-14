@@ -2,26 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
-
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
 @layer base {
-    :root {
+      :root {
+              --background: 224 71% 4%;
+              --foreground: 213 31% 91%;
+              --card: 224 71% 6%;
+              --card-foreground: 213 31% 91%;
+              --popover: 224 71% 4%;
+              --popover-foreground: 213 31% 91%;
+              --primary: 263 70% 70%;
+              --primary-foreground: 224 71% 4%;
+              --secondary: 222 47% 11%;
+              --secondary-foreground: 213 31% 91%;
+              --muted: 223 47% 11%;
+              --muted-foreground: 215 20% 65%;
+              --accent: 192 91% 60%;
+              --accent-foreground: 224 71% 4%;
+              --destructive: 0 84% 60%;
+              --destructive-foreground: 210 40% 98%;
+              --border: 216 34% 17%;
+              --input: 216 34% 17%;
+              --ring: 263 70% 70%;
+              --radius: 0.75rem;
+      }
+
+  .dark {
           --background: 224 71% 4%;
           --foreground: 213 31% 91%;
           --card: 224 71% 6%;
@@ -41,118 +46,84 @@ body {
           --border: 216 34% 17%;
           --input: 216 34% 17%;
           --ring: 263 70% 70%;
-          --radius: 0.75rem;
-    }
-
-  .dark {
-        --background: 224 71% 4%;
-        --foreground: 213 31% 91%;
-        --card: 224 71% 6%;
-        --card-foreground: 213 31% 91%;
-        --popover: 224 71% 4%;
-        --popover-foreground: 213 31% 91%;
-        --primary: 263 70% 70%;
-        --primary-foreground: 224 71% 4%;
-        --secondary: 222 47% 11%;
-        --secondary-foreground: 213 31% 91%;
-        --muted: 223 47% 11%;
-        --muted-foreground: 215 20% 65%;
-        --accent: 192 91% 60%;
-        --accent-foreground: 224 71% 4%;
-        --destructive: 0 84% 60%;
-        --destructive-foreground: 210 40% 98%;
-        --border: 216 34% 17%;
-        --input: 216 34% 17%;
-        --ring: 263 70% 70%;
   }
-}
 
-@layer base {
-    * {
+  * {
           @apply border-border;
-    }
-    body {
+  }
+
+  html {
+          scroll-behavior: smooth;
+  }
+
+  body {
           @apply bg-background text-foreground;
+          font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
           background-image:
             radial-gradient(ellipse 80% 80% at 50% -20%, rgba(120, 80, 255, 0.15), transparent),
             radial-gradient(ellipse 60% 60% at 80% 80%, rgba(0, 200, 255, 0.05), transparent);
           min-height: 100vh;
-    }
+  }
 }
 
 @layer utilities {
-    .text-gradient {
-          background: linear-gradient(135deg, #a78bfa, #22d3ee, #a78bfa);
-          background-size: 200% 200%;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          animation: gradient-shift 4s ease infinite;
-    }
+      .text-gradient {
+              background: linear-gradient(135deg, #a78bfa, #22d3ee, #a78bfa);
+              background-size: 200% 200%;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+              animation: gradient-shift 4s ease infinite;
+      }
 
   .glass-card {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
   }
 
   .glow-primary {
-        box-shadow: 0 0 30px rgba(167, 139, 250, 0.2), 0 0 60px rgba(167, 139, 250, 0.05);
+          box-shadow: 0 0 30px rgba(167, 139, 250, 0.2), 0 0 60px rgba(167, 139, 250, 0.05);
   }
 
   .glow-accent {
-        box-shadow: 0 0 30px rgba(34, 211, 238, 0.2), 0 0 60px rgba(34, 211, 238, 0.05);
+          box-shadow: 0 0 30px rgba(34, 211, 238, 0.2), 0 0 60px rgba(34, 211, 238, 0.05);
   }
 
   .grid-bg {
-        background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-        background-size: 60px 60px;
+          background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+          background-size: 60px 60px;
   }
 
   .mono {
-        font-family: 'JetBrains Mono', monospace;
+          font-family: 'Courier New', Courier, monospace;
   }
 }
 
 @keyframes gradient-shift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-}
-
-@keyframes pulse-glow {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 1; }
-}
-
-@keyframes scan-line {
-    0% { top: 0%; }
-    100% { top: 100%; }
-}
-
-/* Scrollbar */
 ::-webkit-scrollbar {
-    width: 6px;
+      width: 6px;
 }
 ::-webkit-scrollbar-track {
-    background: hsl(var(--background));
+      background: hsl(var(--background));
 }
 ::-webkit-scrollbar-thumb {
-    background: rgba(167, 139, 250, 0.4);
-    border-radius: 3px;
+      background: rgba(167, 139, 250, 0.4);
+      border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(167, 139, 250, 0.7);
+      background: rgba(167, 139, 250, 0.7);
 }
 
-/* Selection */
 ::selection {
-    background: rgba(167, 139, 250, 0.3);
-    color: white;
+      background: rgba(167, 139, 250, 0.3);
+      color: white;
 }
