@@ -13,20 +13,20 @@ import { useTheme } from "next-themes";
 export default function Home() {
     const { theme } = useTheme();
     return (
-          <main className="min-h-screen">
+        <main className="min-h-screen">
                 <Waves
-                          lineColor={theme === "dark" ? "white" : "black"}
-                          backgroundColor="rgba(255, 255, 255, 0.2)"
-                          waveSpeedX={0.02}
-                          waveSpeedY={0.01}
-                          waveAmpX={40}
-                          waveAmpY={20}
-                          friction={0.9}
-                          tension={0.01}
-                          maxCursorMove={120}
-                          xGap={12}
-                          yGap={36}
-                        />
+                            lineColor={theme === "dark" ? "white" : "black"}
+                            backgroundColor="rgba(255, 255, 255, 0.2)"
+                            waveSpeedX={0.02}
+                            waveSpeedY={0.01}
+                            waveAmpX={40}
+                            waveAmpY={20}
+                            friction={0.9}
+                            tension={0.01}
+                            maxCursorMove={120}
+                            xGap={12}
+                            yGap={36}
+                />
                 <Header />
                 <Hero />
                 <About />
@@ -35,6 +35,6 @@ export default function Home() {
                 <Experience />
                 <Contact />
                 <Footer />
-          </main>main>
-        );
-}</main>
+        </main>
+    );
+}
